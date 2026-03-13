@@ -31,7 +31,7 @@ public class TextProcessor {
 
     /*
      * Reads a text file and returns a HashMap containing
-     * word and its frequencies in the file.
+     * each word and its frequency in the file.
      */
     public HashMap<String, Integer> processFile(String path) {
         String[] words;
@@ -41,7 +41,7 @@ public class TextProcessor {
             while ((line = br.readLine()) != null) {
                 //Converts all words to lowercase so they are treated the same
                 line = line.toLowerCase();
-                //Removes everything that isn't a word
+                // Remove punctuation and special characters (keep letters, numbers, spaces)
                 line = line.replaceAll("[^a-z0-9\\s]", "");
                 words = line.split("\\s+");
                 for (String word : words) {
